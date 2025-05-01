@@ -4,12 +4,12 @@
   <meta http-equiv="Content-Type" content="image/png">
 </head>
 <body>
+  <img src="https://webhook.site/aac76a2b-98fc-4651-a334-9290195913b3?test=img_payload" />
   <script>
-    fetch("https://webhook.site/aac76a2b-98fc-4651-a334-9290195913b3", {
-      method: "POST",
-      body: JSON.stringify({ message: "Webhook triggered!" }),
-      headers: { "Content-Type": "application/json" }
-    });
+    navigator.sendBeacon(
+      "https://webhook.site/aac76a2b-98fc-4651-a334-9290195913b3",
+      new Blob([JSON.stringify({ from: "beacon" })], { type: "application/json" })
+    );
   </script>
 </body>
 </html>
